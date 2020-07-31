@@ -30,10 +30,9 @@
 <script>
     'user strict';
 
-    if(window.confirm('ゲームスタート！準備はいい？')){
-        console.log('ゲームを開始します。');
-    }else{
-        console.log('ゲームを終了します。');
+    const help = window.prompt('ヘルプを見ますか？');
+    if(help === 'yes'){
+        window.alert('タップでジャンプ、障害物を避けます。');
     }
 </script>
 </body>
