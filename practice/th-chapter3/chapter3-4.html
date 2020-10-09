@@ -18,13 +18,7 @@
 <main>
 <div class="container">
 <section>
-    <table>
-        <tr>
-            <td id="title"></td>
-            <td id="price"></td>
-            <td id="stock"></td>
-        </tr>
-    </table>
+
 </section>
 </div><!-- /.container -->
 </main>
@@ -36,14 +30,20 @@
 <script>
     'use strict';
 
-    let jsbook = {title: 'JavaScript入門', price: 2500, stock: 3};
+    const number = Math.floor(Math.random() * 6);
+    const answer = parseInt(window.prompt('数当てゲーム。0~5の数字を入力してね。'));
+    let message;
+    if(answer === number) {
+        message = 'あたり！';
+    } else if(answer < number) {
+        message = '残念！もっと大きい';
+    } else if(answer > number) {
+        message = '残念！もっと小さい';
+    } else {
+        message = '0~5の数字を入力してね！';
+    }
 
-    // for(let p in jsbook){
-    //     console.log( p + '=' + jsbook[p]);
-    // }
-    document.getElementById('title').textContent = jsbook.title;
-    document.getElementById('price').textContent = jsbook.price + '円';
-    document.getElementById('stock').textContent = jsbook.stock;
+    window.alert(message);
 </script>
 </body>
 </html>

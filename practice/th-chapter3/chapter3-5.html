@@ -18,13 +18,7 @@
 <main>
 <div class="container">
 <section>
-    <table>
-        <tr>
-            <td id="title"></td>
-            <td id="price"></td>
-            <td id="stock"></td>
-        </tr>
-    </table>
+
 </section>
 </div><!-- /.container -->
 </main>
@@ -36,14 +30,15 @@
 <script>
     'use strict';
 
-    let jsbook = {title: 'JavaScript入門', price: 2500, stock: 3};
+    const hour = new Date().getHours();
 
-    // for(let p in jsbook){
-    //     console.log( p + '=' + jsbook[p]);
-    // }
-    document.getElementById('title').textContent = jsbook.title;
-    document.getElementById('price').textContent = jsbook.price + '円';
-    document.getElementById('stock').textContent = jsbook.stock;
+    if(hour >= 19 && hour < 21) {
+        window.alert('お弁当30%OFF！');
+    } else if(hour === 9 || hour === 15) {
+        window.alert('お弁当１個買ったら、１個おまけ！');
+    } else {
+        window.alert('お弁当はいかがですか？');
+    }
 </script>
 </body>
 </html>
